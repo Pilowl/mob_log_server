@@ -1,0 +1,4 @@
+<ul>ID | Session ID | Application ID | Device ID | Session Was Last Active (UNIX)</ul>
+<ul *ngFor="let session of sessions">
+    {{ session.ID}}  <a [routerLink]="[ 'log', {id: session.sessionId } ]">{{ session.sessionId }}</a> {{ session.appId }} {{ session.deviceId }} {{ session.UpdatedAt}}
+</ul>
