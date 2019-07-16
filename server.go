@@ -4,10 +4,10 @@ import (
 	"log"
 	"time"
 
+	"./controllers"
+	"./repository"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/pilowl/mobilelogservice/controllers"
-	"github.com/pilowl/mobilelogservice/repository"
 	//"net/http"
 )
 

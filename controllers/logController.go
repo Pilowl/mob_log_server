@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
+	"../models"
+	"../repository"
 	"github.com/gin-gonic/gin"
-	"github.com/pilowl/mobilelogservice/models"
-	"github.com/pilowl/mobilelogservice/repository"
 )
 
 const logPath = "/logs/"
