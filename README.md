@@ -5,7 +5,7 @@
 - GOlang
 - Node
 - Angular
-- MySQL Sever & Database
+- MySQL Server
 
 ## Project dependency getting
 
