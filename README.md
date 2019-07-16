@@ -40,6 +40,12 @@ Define username, password, DB port and DB name in *`repository/db.go`*
 db, err = gorm.Open("mysql", "*username*:*password*@tcp(:*port*)/*database_name*?charset=utf8&parseTime=True&loc=Local")
 ```
 
+## Running Server & UI
+
+In root directory `go run server.go` to run API.
+
+In **ui** directory `ng serve --open` to run client.
+
 ## Models
 
 _Log Create Request/Response example:_
