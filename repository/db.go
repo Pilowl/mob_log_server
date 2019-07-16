@@ -22,7 +22,7 @@ func GetDb() *gorm.DB {
 
 func Init() {
 	var err error
-	db, err = gorm.Open("mysql", "root:@tcp(:3306)/repo?charset=utf8&parseTime=True&loc=Local")
+	db, err = gorm.Open("mysql", "root:1234@tcp(:3306)/log_server?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		IsInitialized = false
 		panic("failed to connect to DB@. " + err.Error())

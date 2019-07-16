@@ -11,7 +11,7 @@ export class RestApiService {
 
   constructor(private http: HttpClient) { }
 
-  apiURL = 'http://localhost:3334'
+  apiURL = 'http://maven-vm:3334'
 
   httpOptions = {
     headers: new HttpHeaders({
