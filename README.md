@@ -15,6 +15,8 @@ In UI project folder: `npm install`
 
 ## Project setup
 
+### Client setup
+
 Define port, host and publicHost in *`ui/package.json`*
 
 ```
@@ -35,12 +37,20 @@ server: {
   port: ':3334'
 }
 ```
+### Database setup
+
+1. Download MySQL Server, create database for the server.
+1. Run server, create repository for the server side then.
+
+### Server setup
 
 Define server config in *`/config`* directory
 By default there are two types of config:
 
 - *config/production.json* for production
 - *config/default.json* for any other type of server running
+
+For **"DB"** object use username and password of a MySQL user for which you created database on the previous step.
 
  Config example:
 
