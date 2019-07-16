@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   server: {
     protocol: 'http://',
-    host: '',
+    host: 'maven-vm',
     port: ':3334'
   }
 };

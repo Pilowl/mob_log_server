@@ -61,7 +61,7 @@
             "browserTarget": "ui:build",
 			"port": 4201,
 			"host": "0.0.0.0",
-			"publicHost": ""
+			"publicHost": "maven-vm:4201"
           },
           "configurations": {
             "production": {

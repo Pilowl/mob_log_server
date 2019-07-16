@@ -2,9 +2,10 @@
 
 ## Project prerequisites
 
+- GOlang
 - Node
 - Angular
-- GOlang
+- MySQL Database
 
 ## Project dependency getting
 
@@ -26,18 +27,33 @@ Define port, host and publicHost in *`ui/package.json`*
 ```
 
 Define API URL in *`ui/src/environments/environment.ts`*
+
 ```
 server: {
   protocol: 'http://',
-  host: 'somehost',
+  host: 'someHost',
   port: ':3334'
 }
 ```
 
-Define username, password, DB port and DB name in *`repository/db.go`*
+Define server config in *`/config`* directory
+By default there are two types of config:
+
+- *config/production.json* for production
+- *config/default.json* for any other type of server running
+
+ Config example:
 
 ```
-db, err = gorm.Open("mysql", "*username*:*password*@tcp(:*port*)/*database_name*?charset=utf8&parseTime=True&loc=Local")
+{
+    "Port": ":2222",
+    "DB": {
+        "Username": "root",
+        "Password": "password",
+        "Port": ":3306",
+        "Name": "logging_server"
+    }
+  }
 ```
 
 ## Running Server & UI
@@ -67,6 +83,7 @@ For log sending it is necessary to attach **sessionId** to message in JSON form.
 _Log Record Schema in DB:_
 
 ```
+
 ID - int
 
 CreatedAt - date
@@ -85,6 +102,7 @@ sessionStart - string
 
 sessionLastActive - string
 
-sessionPath - string 
+sessionPath - string
 ```
+
 #

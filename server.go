@@ -2,8 +2,10 @@ package main
 
 import (
 	"log"
+	"os"
 	"time"
 
+	"./config"
 	"./controllers"
 	"./repository"
 	"github.com/gin-contrib/cors"
@@ -15,8 +17,21 @@ func main() {
 	gin.SetMode(gin.DebugMode)
 	gin.ForceConsoleColor()
 
-	if gin.Mode() != gin.DebugMode {
+	if gin.Mode() == gin.ReleaseMode {
 		log.SetFlags(0) // Disabling logs if isn't release
+		config.Init("config/production.json")
+	} else {
+		// Initializing log output to file
+
+		f, err := os.OpenFile("logfile", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+		if err != nil {
+			log.Fatalf("error opening file: %v", err)
+		}
+		defer f.Close()
+		log.SetOutput(f)
+		log.Print("Debug | Test Mode is turned ON, using default config.")
+		log.Panic()
+		config.Init("config/default.json")
 	}
 
 	// Initializing database
@@ -50,6 +65,6 @@ func main() {
 		v1.GET("/get/:id", controllers.GetLog) // Get log by session ID
 	}
 
-	r.Run(":3334")
+	r.Run(config.GetConfig().Port)
 
 }
