@@ -11,7 +11,7 @@
 
 In main project folder: `go get -u ./`
 
-In UI project folder: `npm install`
+In UI project folder: `npm install` and `npx -p devextreme-cli devextreme add devextreme-angular` to install Angular DevExtreme.
 
 ## Project setup
 
