@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Session } from './session';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class RestApiService {
 
   constructor(private http: HttpClient) { }
 
-  apiURL = 'http://maven-vm:3334'
+  apiURL = environment.server.protocol + environment.server.host + environment.server.port;
 
   httpOptions = {
     headers: new HttpHeaders({

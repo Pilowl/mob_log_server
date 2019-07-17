@@ -1,4 +1,25 @@
-<ul>ID | Session ID | Application ID | Device ID | Session Was Last Active (UNIX)</ul>
+<!-- <ul>ID | Session ID | Application ID | Device ID | Session Was Last Active (UNIX)</ul>
 <ul *ngFor="let session of sessions">
     {{ session.ID}}  <a [routerLink]="[ 'log', {id: session.sessionId } ]">{{ session.sessionId }}</a> {{ session.appId }} {{ session.deviceId }} {{ session.UpdatedAt}}
-</ul>
+</ul> -->
+<dx-data-grid
+    id="sessionGrid"
+    [dataSource]="sessions"
+    [showBorders]="true">
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxo-pager
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[5, 10, 20]"
+        [showInfo]="true">
+    </dxo-pager>
+
+    <dxi-column dataField="ID"></dxi-column>
+    <dxi-column dataField="sessionId" cellTemplate="sessionTemplate"></dxi-column>
+    <div *dxTemplate="let session of 'sessionTemplate'">
+        <a [routerLink]="[ 'log', {id: session.text } ]">{{ session.text }}</a> 
+    </div>
+    <dxi-column dataField="appId"></dxi-column>
+    <dxi-column dataField="deviceId"></dxi-column>
+    <dxi-column dataField="CreatedAt"></dxi-column>
+    <dxi-column dataField="UpdatedAt"></dxi-column>
+</dx-data-grid>

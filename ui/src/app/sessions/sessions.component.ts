@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../shared/rest-api.service';
-
 @Component({
   selector: 'app-sessions',
   templateUrl: './sessions.component.html',
@@ -9,7 +8,7 @@ import { RestApiService } from '../shared/rest-api.service';
 
 export class SessionsComponent implements OnInit {
 
-  sessions: any = []
+  sessions: any = [];
 
   constructor(
     public restApi: RestApiService

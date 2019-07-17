@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SessionsComponent } from './sessions/sessions.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LogComponent } from './log/log.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { DxDataGridModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,12 @@ import { LogComponent } from './log/log.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    DxDataGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
