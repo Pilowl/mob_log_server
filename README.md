@@ -115,7 +115,7 @@ sessionLastActive - string
 sessionPath - string
 ```
 
-# License
+## License
 
 ```
 /*
