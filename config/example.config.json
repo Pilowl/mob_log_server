@@ -1,0 +1,9 @@
+{
+    "Port": ":2222",
+    "DB": {
+        "Username": "root",
+        "Password": "password",
+        "Port": ":3306",
+        "Name": "logging_server"
+    }
+  }
