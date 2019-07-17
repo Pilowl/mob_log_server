@@ -116,6 +116,8 @@ sessionPath - string
 ```
 
 # License
+
+```
 /*
  * ----------------------------------------------------------------------------
  * "THE BEER-WARE LICENSE" (Revision 42):
@@ -124,4 +126,5 @@ sessionPath - string
  * this stuff is worth it, you can buy me a beer in return Poul-Henning Kamp
  * ----------------------------------------------------------------------------
  */
+```
  #
