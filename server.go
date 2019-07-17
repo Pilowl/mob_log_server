@@ -30,7 +30,6 @@ func main() {
 		defer f.Close()
 		log.SetOutput(f)
 		log.Print("Debug | Test Mode is turned ON, using default config.")
-		log.Panic()
 		config.Init("config/default.json")
 	}
 
