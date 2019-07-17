@@ -13,7 +13,7 @@
         [showInfo]="true">
     </dxo-pager>
 
-    <dxi-column dataField="ID"></dxi-column>
+    <dxi-column dataField="ID" width="64px"></dxi-column>
     <dxi-column dataField="sessionId" cellTemplate="sessionTemplate"></dxi-column>
     <div *dxTemplate="let session of 'sessionTemplate'">
         <a [routerLink]="[ 'log', {id: session.text } ]">{{ session.text }}</a> 
